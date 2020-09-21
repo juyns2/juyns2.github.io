@@ -16,12 +16,14 @@ center{display:none;}
 </style>
 <script>
 	if(top.location != self.location){top.location = self.location;}
+	function play(){
+	ado1.play() = true; ado1.volume = 0.7;}
 </script>
 
 <link href="../dataflink/icon1.png" rel="shortcut icon">
 </head>
 
-<body style='cursor:url(../dataflink/mouse1.png),auto'>
+<body style='cursor:url(../dataflink/mouse1.png),auto' onmousewheel='play()'>
 <!-- <p style="background-color:#ddd;padding:30px;font-size:20px;"><span style='cursor:url(Images/Thach.png),auto'>haha</span>
 <span style='cursor:url(Images/H.png),auto'> 2haha</span>
 <span style='cursor:url(Images/lclick.png),auto'>3haha</span>
@@ -48,7 +50,7 @@ center{display:none;}
             <a class='pic' href="#"> <img src="/images/jquery.jpg" width="120px" height="180px"> </a>
          </div>
      </div>
-<audio controls autoplay>
+<audio id='ado1' controls autoplay>
           <source src='../dataflink/mangchung.mp3'>
 </audio>
 
