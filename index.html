@@ -17,7 +17,7 @@ center{display:none;}
 <script>
 	if(top.location != self.location){top.location = self.location;}
 	function play(){
-	ado1.play() = true; ado1.volume = 0.07; body.focus();}
+	a1.focus(); if(a1.focus() == true)ado1.play() = true; ado1.volume = 0.07; }
 </script>
 
 <link href="../dataflink/icon1.png" rel="shortcut icon">
@@ -31,7 +31,7 @@ center{display:none;}
 	<h2 style="text-align:center">Danh mục Sách</h2>
     <div style="text-align:center;">
     	<div style="display:inline-block;">
-             <h3><a class='a1' href="#">HTML</a></h3>
+             <h3><a id='a1' href="#">HTML</a></h3>
              <a class='pic' href="/html/js_vip1.html"> <img src="../dataflink/html.jpg" width="120px" height="180px"> </a>
         </div>
 
