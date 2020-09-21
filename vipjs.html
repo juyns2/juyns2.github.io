@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Js_video</title>
+<style>
+#video1{position:absolute; top:100px; left:470px;}
+#video1:focus{outline:none;}
+#d2{color:red; text-align:center;}
+#bt1{background-color:seagreen;border:2px solid yellow; color:pink;
+padding:4px; font-size:20px; border-radius:6px;}
+#bt1:focus{outline:none;}
+#bt2{border:2px solid yellow; position:absolute; top:0px; right:0px;}
+#bt2:focus{outline:none;}
+#p1{color:red;}
+#txt1:focus{outline:none;}
+#txt1{background-color:#696969; position:absolute;top:40px;left:0px; cursor:move;}
+input::-webkit-input-placeholder { /* -webkit-inp... 'nhận diện trd' Css cho Placeholder */
+color: red; font-family:monospace; font-size:110%;}
+#fc{color:red; font-size:1px; position:absolute;bottom:10px;right:10px;}
+#main{height:500px; position:relative;}
+center{display:none;}
+div a{display:none;} 
+body{background-color:black;
+cursor:url(../Images/mouse1.png),auto;}
+::-webkit-scrollbar{display:none;}
+</style>
+
+</head>
+<body onkeydown = 'click1(event),click5()' onclick='click(4)' onmousedown='dclickr(event),click5()'>
+
+<div id='main'>
+<div id='d1'>
+<video id='video1' width='450' controls>
+<source src='https://github.com/juyns2/images/mangchung.mp4' type='video/mp4'>
+</video>
+</div>
+
+<script>
+var v1 = document.getElementById('video1');
+function plop(){if(v1.paused) v1.play(),v1.volume=0.07; else v1.pause();}
+function moum(){if(v1.muted) v1.muted = false; else v1.muted=true;}
+function icvl(){v1.volume += 0.1;}
+function dcvl(){v1.volume -= 0.1;}
+
+
+//Các function by Duy Tân don't coppy Please.
+function click2(){document.documentElement.webkitRequestFullScreen();
+document.getElementById('bt2').style.display = 'none';}
+function click3(){document.getElementById('bt2').style.display = 'inline-block';}
+function click4(){ document.getElementById('fc').focus();}
+function click6(){ document.getElementById('txt1').focus();}
+function dclickr(bam){if(bam.button==2) alert('ghê chưa');}
+function click5(){
+var main = document.getElementById('main').style;
+main.height = window.innerHeight -40 + 'px';
+main.width = window.innerWidth - 30 + 'px';}
+
+var a;
+function click1(bam){
+var b = bam.keyCode;
+if (b != 116) bam.preventDefault();
+else {};
+if (b == 38) icvl();
+else if(b == 40) dcvl();
+else if(b == 32) plop();
+else if(a == 65 && b == 86) moum();
+else if(b == 65 && bam.ctrlKey == true) moum();
+else if(b == 70) click2();
+else if(b == 27) click3();
+else {}; a=b;}
+
+function openW() {
+        window.open('http://toidicode.com', 'toidicode', 'width=500,height=600');
+        return false;}
+
+var demBt = 0;
+function kttd(){
+++demBt;
+var x = document.getElementById("kt");
+var txtBt = document.getElementById("bt1");
+if(demBt % 2 == 1){
+var width = window.innerWidth;
+var height = document.documentElement.clientHeight;
+txtBt.innerHTML = 'Ẩn Xem';
+x.innerHTML = "Chiều rộng trình duyệt: " + width + ", Chiều cao của trình duyệt: " + height + ".";}
+else x.innerHTML='', txtBt.innerHTML = 'Xem Kích Thước';}
+
+     
+</script>
+
+<div id='d2'><p id='kt'></p><p id='p1'></p>
+<button id='bt1' onclick='kttd()'> Xem Kích Thước </button></div>
+<button id='bt2' onclick='click2()'> <img src='C:\Users\Hung Windows\Downloads\btfullsc.png'></button>
+<input type='text' name='email' onmouseup='click6()' id='txt1' placeholder='click vô'>
+</div>
+<a href='#' id='fc' onclick='return false'>.</a>
+</body>
+</html>
+<!--
